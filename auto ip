@@ -1,0 +1,7 @@
+#!/bin/bash
+
+{
+hilink info
+sleep 3
+hilink iphunter
+}
