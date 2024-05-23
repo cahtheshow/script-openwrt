@@ -1,0 +1,7 @@
+#!/bin/bash
+
+{
+bled -s
+sleep 3
+bledon -lan dis
+}
