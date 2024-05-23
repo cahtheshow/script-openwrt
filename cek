@@ -1,0 +1,29 @@
+#!/bin/bash
+# ping by AlkhaNET
+
+bug="$1"
+
+echo -e "Cek Ping: "${bug}
+logger "Cek Ping: "${bug}
+#	ping -c 5 ${bug} | grep round-trip > /tmp/cping
+	
+	pms=$(httping -c 5 ${bug} | grep round-trip | cut -d/ -f4)
+	msa=$(httping -c 5 ${bug} | grep round-trip | grep -o ms)
+	
+if [ $msa = "ms" ]; then	
+	echo -e "Ping = $pms $msa"
+	logger "Ping = $pms $msa"
+else
+	echo -e "Tidak ada Internet"
+	echo -e "Restart Modem"
+	sleep 5
+	#clear
+	#reboot
+	#python3 /usr/bin/huawei.py
+	#hilink info
+	hilink iphunter
+	#/etc/init.d/network restart
+	#AT^RESET | atinout -/dev/ttyUSB0 -
+	#bledon -usb reset
+	#/sbin/usbt -r
+fi	
