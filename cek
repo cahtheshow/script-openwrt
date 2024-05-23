@@ -25,5 +25,5 @@ else
 	#/etc/init.d/network restart
 	#AT^RESET | atinout -/dev/ttyUSB0 -
 	#bledon -usb reset
-	#/sbin/usbt -r
+	#/sbin/usb -r
 fi	
