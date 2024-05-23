@@ -1,8 +1,5 @@
 #!/bin/bash
 
 {
-sync && echo 3 > /proc/sys/vm/drop_caches
-#rm -r /tmp/luci*
 bled -r
-sleep 3
 }
