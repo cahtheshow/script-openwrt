@@ -2,6 +2,6 @@
 
 {
 bled -s
-sleep 3
+sleep 1
 bledon -lan dis
 }
