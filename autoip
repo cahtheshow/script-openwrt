@@ -2,6 +2,6 @@
 
 {
 hilink info
-sleep 3
+sleep 1
 hilink iphunter
 }
