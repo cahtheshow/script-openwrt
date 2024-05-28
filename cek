@@ -19,11 +19,14 @@ else
 	sleep 5
 	#clear
 	#reboot
-	#python3 /usr/bin/huawei.py
+	#restart
+	autoip
 	#hilink info
-	hilink iphunter
-	#/etc/init.d/network restart
-	#AT^RESET | atinout -/dev/ttyUSB0 -
-	#bledon -usb reset
 	#/sbin/usb -r
+	#hilink iphunter
+	#python3 /usr/bin/huawei.py
+	#/etc/init.d/network restart
+	#ifdown wan; sleep 5; ifup wan
+	#AT^RESET | atinout -/dev/ttyUSB0 -
+	#bledon -usb reset > /dev/null 2>&1
 fi	
