@@ -78,13 +78,16 @@ if [ $CNT -ge $4 ]; then
 
 			logger -t LITE-WATCHDOG "Reboot"
 			#reboot
-			#python3 /usr/bin/huawei.py
-			hilink info
+			#restart
+			autoip
+			#hilink info
+			#/sbin/usb -r
 			#hilink iphunter
+			#python3 /usr/bin/huawei.py
 			#/etc/init.d/network restart
+			#ifdown wan; sleep 5; ifup wan
 			#AT^RESET | atinout -/dev/ttyUSB0 -
 			#bledon -usb reset > /dev/null 2>&1
-			#/sbin/modemnet -r
 			
 			
 			;;
