@@ -12,7 +12,7 @@ def get_wan_info(client):
 
 def main():
     """Main function."""
-    router_ip = '192.168.6.1'
+    router_ip = '192.168.8.1'
     username = 'admin'
     password = 'admin123'
 
