@@ -7,16 +7,16 @@ HOST="google.com"
 reboot_modem() {
     echo "$(date +"%Y-%m-%d %H:%M:%S") - Reboot Modem..."
     #reboot                             # reboot stb
-		#restart                            # restart stb, restart modem, restart router
-		#autoip                              # auto ganti ip modem
-		hilink info                        # cek modem info
-		#/sbin/usb -r                       # reboot modem
-		#hilink iphunter                    # ganti ip modem by aryo brokoly
-		#python3 /usr/bin/huawei.py         # ganti ip modem by reyre
-		#/etc/init.d/network restart        # restart semua interface
-		#ifdown wan; sleep 5; ifup wan      # restart interface wan
-		#AT^RESET | atinout -/dev/ttyUSB0 - # restart modem rakitan
-		#lednet -usb reset > /dev/null 2>&1 # reboot modem by alkhnet
+    #restart                            # restart stb, restart modem, restart router
+    #autoip                             # auto ganti ip modem
+    hilink info                        # cek modem info
+    #/sbin/usb -r                       # reboot modem
+    #hilink iphunter                    # ganti ip modem by aryo brokoly
+    #python3 /usr/bin/huawei.py         # ganti ip modem by reyre
+    #/etc/init.d/network restart        # restart semua interface
+    #ifdown wan; sleep 5; ifup wan      # restart interface wan
+    #AT^RESET | atinout -/dev/ttyUSB0 - # restart modem rakitan
+    #lednet -usb reset > /dev/null 2>&1 # reboot modem by alkhnet
 }
 
 # Variabel untuk menghitung berapa kali ping gagal
