@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Alamat host yang ingin Anda ping
-HOST="google.com"
+HOST="104.26.7.171"
 
 # Fungsi untuk reboot modem
 reboot_modem() {
@@ -28,13 +28,13 @@ WAIT_TIME=1
 # Loop untuk melakukan Ping dan Reboot Modem
 while true; do
     if ping -c 1 $HOST &> /dev/null; then
-        echo "$(date +"%Y-%m-%d %H:%M:%S") - Online. Melanjutkan ping..."
+        echo "$(date +"%Y-%m-%d %H:%M:%S") - Online"
         failed_count=0  # Reset hitungan kegagalan jika host berhasil dijangkau
     else
-        echo "$(date +"%Y-%m-%d %H:%M:%S") - Offline."
+        echo "$(date +"%Y-%m-%d %H:%M:%S") - Offline"
         failed_count=$((failed_count + 1))  # Tingkatkan hitungan kegagalan
         if [ $failed_count -ge 3 ]; then
-            echo "$(date +"%Y-%m-%d %H:%M:%S") - Gagal ping sebanyak 3 kali. Reboot Modem..."
+            echo "$(date +"%Y-%m-%d %H:%M:%S") - Gagal ping 3 kali. Reboot Modem..."
             reboot_modem  # Jika sudah ada 3 kegagalan berturut-turut, reboot modem
             failed_count=0  # Reset hitungan kegagalan setelah reboot modem
         fi
