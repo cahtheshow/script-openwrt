@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# B860H / HG680P GPIO Wrapper
-# Modify by ALK-NET
-
 if [ "$(id -u)" != "0" ]; then
   echo "This script must be run as root" 1>&2
   exit 1
@@ -12,11 +9,11 @@ SERVICE_NAME="Internet Indicator"
 
 function loop() {
   while true; do
-    bledon -lan dis
+    lednet -lan dis
     if curl -X "HEAD" --connect-timeout 3 -so /dev/null "http://www.gstatic.com/generate_204"; then
-      bledon -lan on
+      lednet -lan on
     else
-      bledon -lan off
+      lednet -lan off
     fi
     sleep 1
   done
@@ -24,11 +21,11 @@ function loop() {
 
 function loop2() {
   while true; do
-      bledon -power dis
+      lednet -power dis
     if curl -X "HEAD" --connect-timeout 3 -so /dev/null "http://www.gstatic.com/generate_204"; then
-      bledon -power on
+      lednet -power on
     else
-      bledon -power off
+      lednet -power off
     fi
     sleep 1
   done
