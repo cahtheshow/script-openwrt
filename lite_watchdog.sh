@@ -77,18 +77,18 @@ if [ $CNT -ge $4 ]; then
 			date +"%A %d-%B %Y %T, Status: OFFLINE > Action: Reboot" >> $LOG_FILE && sleep 5
 
 			logger -t LITE-WATCHDOG "Reboot"
-			#reboot
-			#restart
-			autoip
-			#hilink info
-			#/sbin/usb -r
-			#hilink iphunter
-			#python3 /usr/bin/huawei.py
-			#/etc/init.d/network restart
-			#ifdown wan; sleep 5; ifup wan
-			#AT^RESET | atinout -/dev/ttyUSB0 -
-			#bledon -usb reset > /dev/null 2>&1
 			
+			#reboot                             # reboot stb
+			#restart                            # restart stb, restart modem, restart router
+			autoip                              # auto ganti ip modem
+			#hilink info                        # cek modem info
+			#/sbin/usb -r                       # reboot modem
+			#hilink iphunter                    # ganti ip modem by aryo brokoly
+			#python3 /usr/bin/huawei.py         # ganti ip modem by reyre
+			#/etc/init.d/network restart        # restart semua interface
+			#ifdown wan; sleep 5; ifup wan      # restart interface wan
+			#AT^RESET | atinout -/dev/ttyUSB0 - # restart modem rakitan
+			#lednet -usb reset > /dev/null 2>&1 # reboot modem by alkhnet
 			
 			;;
 		"wan")
