@@ -1,13 +1,12 @@
 #!/bin/bash
 
-bug="$1"
+bug="google.com"
 
 echo -e "Cek Ping: "${bug}
 logger "Cek Ping: "${bug}
-#	ping -c 5 ${bug} | grep round-trip > /tmp/cping
 	
-	pms=$(httping -c 5 ${bug} | grep round-trip | cut -d/ -f4)
-	msa=$(httping -c 5 ${bug} | grep round-trip | grep -o ms)
+	pms=$(httping -c 1 ${bug} | grep round-trip | cut -d/ -f4)
+	msa=$(httping -c 1 ${bug} | grep round-trip | grep -o ms)
 	
 if [ $msa = "ms" ]; then	
 	echo -e "Ping = $pms $msa"
